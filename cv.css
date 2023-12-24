@@ -1,0 +1,134 @@
+body {
+    background-color: #ddd;
+    line-height: 1.4;
+    margin: 0;
+    padding: 20px 10px;
+    font-size: 0.8em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    max-width: 600px;
+    min-height: 900px;
+    background-color: white;
+    box-shadow: 0 0 3px black;
+    margin: 10px auto;
+    padding: 40px;
+    text-align: justify;
+}
+
+.header a img {
+    width: 90px;
+    float: left;
+}
+
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 9999;
+    transition: 0.7s;
+    padding: 100px 0;
+    animation: gambar;
+}
+.overlay:target {
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, .7);
+}
+.overlay img {
+    max-height: 100%;
+    box-shadow: 5px 5px 50px white;
+}
+.overlay:target img {
+    animation: gambar 1s;
+}
+@keyframes gambar {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.close {
+    position: absolute;
+    top: 80px;
+    left: 68.5%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    transition: .7s;
+    opacity: 0;
+}
+.close:hover {
+    text-shadow: 0px 1px 5px white, 0 -1px 5px white;
+}
+.overlay:target .close {
+    animation: close 1s 1s forwards;
+}
+@keyframes close {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.header h1,
+.header p {
+    text-align: center;
+}
+
+.content {
+    margin-top: 15px;
+}
+.content h3 {
+    margin-bottom: -3px;
+}
+table {
+    width: 100%;
+}
+table a {
+    text-decoration: none;
+    color: black;
+}
+table a:hover {
+    color: rgb(208, 0, 0);
+}
+table .kiri {
+    text-align: left;
+}
+table .kanan {
+    text-align: right;
+    width: 30%;
+}
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.dua table tr .spasi {
+    text-indent: 18px;
+}
+@media (max-width:550px) {
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
